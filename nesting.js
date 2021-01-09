@@ -50,7 +50,19 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+function employeeUpdater() {
+  employees.map(e => {
+    if(e.firstName === 'Theo')
+    {
+      delete employees[employees.indexOf(e)];
+    }
+    if(e.firstName === "Lorie")
+    {
+      employees[employees.indexOf(e)].department = 'HR'
+    }
+  })
+  return employees;
+}
 
 
 
@@ -68,7 +80,10 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+function removeDuplicates(){
+  workplaceAccidents = [...new Set(workplaceAccidents)];
+  return workplaceAccidents;
+}
 
 
 
@@ -97,8 +112,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -138,7 +153,9 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+function recordCleaner() {
+  myCar.accidents.forEach(obj => obj.atFaultForAccident = false);
+}
 
 
 
@@ -157,6 +174,11 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
+function looper(){
+  numsArr = numsArr.map((nums) => {
+    return nums.map(num => num%2===0 ? 'even' : 'odd')
+  })
+  return numsArr;
+}
 
 
